@@ -200,34 +200,6 @@ Funções do script:
 
 ---
 
-## 🚧 Limitações conhecidas
-
-- **Dependência do layout do PDF:** a expressão regular assume uma ordem e um espaçamento específicos entre os campos (por exemplo, a data de nascimento logo após a nota da prova discursiva, e a nota final logo após a classificação). Qualquer mudança no texto extraído pode impedir a extração.
-- **Nome completo e exato:** a expressão regular exige o nome inteiro, igual ao do PDF. Variações de grafia, acentuação ou espaçamento podem resultar em "não encontrado".
-- **Valores de situação e cota limitados:** a expressão reconhece apenas `aprovado`/`reprovado` e a cota `negro`. Outras situações ou cotas, se existirem no PDF, não são previstas.
-- **Localização do PDF por texto exato:** o link é encontrado pelo texto `Resultado final - todos os cargos (Lista geral)`. Se o texto do link mudar no site, o PDF não será localizado.
-- **URL do PDF:** o script usa o valor do atributo `href` diretamente; não há tratamento para links relativos ou ausentes.
-- **Sem tratamento de erros de rede:** falhas de conexão, status HTTP de erro ou *timeouts* não são tratados e interrompem o script com uma exceção. Nenhum *timeout* é configurado explicitamente.
-- **Sem cache:** o PDF é baixado novamente a cada execução.
-- **Primeira ocorrência:** a busca retorna apenas o primeiro resultado que satisfizer a expressão regular.
-- **Texto extraído de PDF:** páginas sem texto extraível (por exemplo, imagens escaneadas) são ignoradas, pois não há OCR.
-- **Sem testes automatizados** e sem garantias de funcionamento contínuo. Não há evidências, neste repositório, de que o projeto esteja pronto para uso em produção.
-
----
-
-## 💡 Possíveis melhorias
-
-- [ ] Tratar erros de rede e de resposta HTTP com mensagens amigáveis.
-- [ ] Definir *timeout* e tentativas de nova requisição.
-- [ ] Resolver links relativos do PDF.
-- [ ] Permitir busca parcial ou normalizada de nomes (ignorando acentos e espaços extras).
-- [ ] Tornar a expressão regular mais tolerante a variações de espaçamento e a outras situações/cotas.
-- [ ] Oferecer saída formatada (por exemplo, JSON ou tabela) em vez de imprimir o dicionário.
-- [ ] Manter cache local do PDF para evitar downloads repetidos.
-- [ ] Adicionar testes automatizados e um arquivo de dependências (`requirements.txt`).
-- [ ] Definir uma licença para o projeto.
-
----
 
 ## 🏛️ Fonte oficial dos dados
 
